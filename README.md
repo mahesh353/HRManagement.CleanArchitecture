@@ -27,9 +27,9 @@ Steps to setup the project-
 
 3) Open Package Manager Console & Type below commands one by one to setup the database
    
-   add-migration [migration_name]
-   update database
+   1) add-migration [migration_name]
+   2) update database
    
-4) Once done it will generate the .mdf file in your home directory restore that file in local database using server explorer
+4) Once done it will generate the .mdf file in your home directory restore that file in local database using server explorer(not a mandatory step)
 5) Run the project It will open both api project & client project at the same time
   
