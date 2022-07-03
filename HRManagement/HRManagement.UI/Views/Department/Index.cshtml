@@ -1,0 +1,50 @@
+﻿@model IEnumerable<HRManagement.Application.Features.Department.Queries.GetDepartmentDetails.DepartmentDetailVM>
+
+@{
+	ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a asp-action="Create" asp-controller="Department" class="btn btn-sm btn-primary">Add New Department</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.DepartmentId)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DepartmentName)
+			</th>
+			<th>Edit</th>
+			<th>Details</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.DepartmentId)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DepartmentName)
+				</td>
+				<td>
+					@Html.ActionLink("Edit", "Edit", new { id = item.DepartmentId })
+				</td>
+				<td>
+					@Html.ActionLink("Details", "Details", new { id = item.DepartmentId })
+				</td>
+				<td>
+					<form asp-action="Delete" method="post">
+						<input type="hidden" value="@item.DepartmentId" name="DepartmentId" />
+						<button type="submit"><img src="~/images/delete.png" style="height:37px; width:36px" /></button>
+					</form>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

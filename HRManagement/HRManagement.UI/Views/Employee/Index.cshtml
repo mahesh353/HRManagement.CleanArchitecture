@@ -1,0 +1,64 @@
+﻿@model IEnumerable<HRManagement.Application.Features.Employee.Queries.GetEmployeeDetails.EmployeeDetailsVM>
+
+<h2>Employee List</h2>
+
+<a asp-action="Create" asp-controller="Employee" class="btn btn-sm btn-primary">Add New Employee</a>
+
+<table class="table table-sm table-striped table-bordered m-2">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.FirstName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.LastName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DateOfBirth)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.DateOfJoining)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Department.DepartmentName)
+			</th>
+			<th>Update</th>
+			<th>Delete</th>
+			<th>Details</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.FirstName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.LastName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DateOfBirth)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DateOfJoining)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Department.DepartmentName)
+				</td>
+				<td>
+					@Html.ActionLink("Edit", "Edit", new { id = item.EmployeeId })
+				</td>
+				<td>
+					@Html.ActionLink("Details", "Details", new { id = item.EmployeeId })
+				</td>
+				<td>
+					<form asp-action="Delete" method="post">
+						<input type="hidden" value="@item.EmployeeId" name="EmployeeId" />
+						<button type="submit"><img src="~/images/delete.png" style="height:37px; width:36px" /></button>
+					</form>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

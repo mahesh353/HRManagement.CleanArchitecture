@@ -1,0 +1,4 @@
+D:\Assignment\HRManagement\HRManagement.Identity\obj\Debug\netcoreapp3.1\HRManagement.Identity.csprojAssemblyReference.cache
+D:\Assignment\HRManagement\HRManagement.Identity\obj\Debug\netcoreapp3.1\HRManagement.Identity.AssemblyInfoInputs.cache
+D:\Assignment\HRManagement\HRManagement.Identity\obj\Debug\netcoreapp3.1\HRManagement.Identity.AssemblyInfo.cs
+D:\Assignment\HRManagement\HRManagement.Identity\obj\Debug\netcoreapp3.1\HRManagement.Identity.csproj.CoreCompileInputs.cache
